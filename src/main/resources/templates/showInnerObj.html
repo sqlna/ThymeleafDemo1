@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    日期: <span th:text="${#dates.format(date,'yyyy-MM-dd')}"></span><br>
+    金额: <span th:text="${price}"></span> <br>
+    <!--第一个是价格  第二个是整数部分保留几位   第三个是小数部分保留几位-->
+    金额(精确到小数点后两位): <span th:text="${#numbers.formatDecimal(price,1,2)}"></span> <br>
+    字符串: <span th:text="${str}"></span> <br><br>
+    字符串(20个字符): <span th:text="${#strings.abbreviate(str,20)}"></span> <br>
+    判断字符串是否为空: <span th:text="${#strings.isEmpty(str)}"></span> <br>
+    字符串截取: <span th:text="${#strings.substring(str,0,10)}"></span>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <table width="300" style="text-align: center">
+            <tr>
+                <th>编号</th>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>年龄</th>
+            </tr>
+
+            <tr th:each="user,iterStat : ${list}">
+                <td th:text="${iterStat.count}"></td>   <!--iterStat必须依托标签而存在-->
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.age}"></td>
+            </tr>
+
+        </table>
+
+        <!--总共的元素有${iterStat.count}个-->
+        <span th:text="'有个姑娘叫' + ${username} + ',长得好看又漂亮'"></span> <br>  <!--字符串拼接少不了用标签-->
+        <span th:text="|有个姑娘叫${username},长得好看又漂亮|"></span> <br>
+
+        <br><br>
+        <input type="text" name="uname" th:value="${username}">
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <!--展示图片-->
+        <img src="../../../../image/cat.jpg" alt=""> <br>
+
+        <img src="/image/cat.jpg" alt=""> <br>   <!--这种方法不成熟  不建议使用-->
+
+        <!--这相当于绝对路径    这种获取静态资源的方法好点-->
+        <img th:src="@{/image/cat.jpg}" alt=""> <br>
+
+</body>
+</html>
